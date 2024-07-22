@@ -1,8 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-
-import { copy, linkIcon, loader, tick } from "../public/assets";
+import { useState, useEffect } from "react";
 
 const Demo = () => {
   const [article, setArticle] = useState({
@@ -17,7 +15,7 @@ const Demo = () => {
   const options = {
     method: "GET",
     headers: {
-      "x-rapidapi-key": "0758bcbf4fmsh3892a28086938d8p1f635ejsnf756887ee61b",
+      "x-rapidapi-key": process.env.RAPID_API_KEY!,
       "x-rapidapi-host": "article-extractor-and-summarizer.p.rapidapi.com",
     },
   };
@@ -35,9 +33,6 @@ const Demo = () => {
       return error;
     }
   };
-
-  // RTK lazy query
-  //   const [getSummary, { error, isFetching }] = useLazyGetSummaryQuery();
 
   // Load data from localStorage on mount
   useEffect(() => {
