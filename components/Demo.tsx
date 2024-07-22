@@ -15,7 +15,7 @@ const Demo = () => {
   const options = {
     method: "GET",
     headers: {
-      "x-rapidapi-key": process.env.RAPID_API_KEY!,
+      "x-rapidapi-key": process.env.NEXT_PUBLIC_RAPID_API_KEY!,
       "x-rapidapi-host": "article-extractor-and-summarizer.p.rapidapi.com",
     },
   };
